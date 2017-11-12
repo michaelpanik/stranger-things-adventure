@@ -1,3 +1,5 @@
+![Stranger Things Logo in ASCII](https://raw.githubusercontent.com/michaelpanik/stranger-things-adventure/master/stranger-things_ascii.png)
+
 # Stranger Things 2 Adventure Game
 A Stranger Things-inspired, Apple II style text adventure game, browser based and built with vanilla JS.
 

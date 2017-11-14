@@ -1,2 +1,4 @@
 ./assets
 *.psd
+package.json
+./node_modules

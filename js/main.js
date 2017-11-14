@@ -1,45 +1,124 @@
 var Model = (function() {
   var db = {
-    rooms: [
-      {
-        text: "You are standing in a dark room.",
+    rooms: {
+      1: { // START
+        text: "The door clicks shut behind you. The dark hall stretches out before you. You have a gun, a flashlight, and your walkie talkie.",
         options: [
-          { text: "Go forward.", dest: 1 },
-          { text: "Go left.", dest: 2 },
-          { text: "Go right.", dest: 3 }
+          { text: "Go north.", dest: 2 }
         ]
       },
-      {
-        text: "Forward.",
+      2: {
+        text: "You are at the east end of an east/west hallway.",
         options: [
-          { text: "Go back.", dest: 0 },
-          { text: "Go away.", dest: 4 }
+          { text: "Go east.", dest: 3 },
+          { text: "Go west.", dest: 1 }
         ]
       },
-      {
-        text: "Left.",
+      3: {
+        text: "The hall continues to the west.",
         options: [
-          { text: "Go back.", dest: 0 },
-          { text: "Go away.", dest: 4 }
+          { text: "Go east.", dest: 4 },
+          { text: "Go west.", dest: 2 }
         ]
       },
-      {
-        text: "Right.",
+      4: {
+        text: "The hall continues to the west.",
         options: [
-          { text: "Go back.", dest: 0 },
-          { text: "Go away.", dest: 4 }
+          { text: "Go east.", dest: 5 },
+          { text: "Go west.", dest: 3 }
         ]
       },
-      {
-        text: "You have reached the end!",
+      5: {
+        text: "You are at the end of a long, north/south hallway with some doors and corridors. The bodies of dead lab workers litter the floor.",
         options: [
-          { text: "Start over.", dest: 0 }
+          { text: "Go north.", dest: 6 },
+          { text: "Go west.", dest: 4 }
         ]
       },
-    ]
+      6: {
+        text: "The hall continues north.",
+        options: [
+          { text: "Go north.", dest: 7 },
+          { text: "Go south.", dest: 5 }
+        ]
+      },
+      7: {
+        text: "The hall continues north. There seems to be a closet to the east.",
+        options: [
+          { text: "Go north.", dest: 9 },
+          { text: "Enter closet.", dest: 8 },
+          { text: "Go south.", dest: 6 }
+        ]
+      },
+      8: {
+        text: "You are in a supply closet. It looks ransacked, save for a few scraps of paper.",
+        options: [
+          { text: "Examine the paper.", dest: 8.1 },
+          { text: "Exit closet.", dest: 7 }
+        ]
+      },
+      8.1: { // Getting the first power code.
+        text: "The paper is damaged. What remains reads: \"Power code (3/3): ELEVEN\"",
+        options: [
+          { text: "Store the paper.", dest: 8 },
+          { text: "Exit closet.", dest: 7 }
+        ]
+      },
+      9: {
+        text: "The hall continues north.",
+        options: [
+          { text: "Go north.", dest: 10 },
+          { text: "Go south.", dest: 7 }
+        ]
+      },
+      10: {
+        text: "You are at a split; a hall to the north and one to the east. The east corridor is pitch black and gives you a terribly uneasy feeling.",
+        options: [
+          { text: "Go north.", dest: 11 },
+          { text: "Go east.", dest: 36 },
+          { text: "Go south.", dest: 9 }
+        ]
+      },
+      11: {
+        text: "The hall continues north. In the hand of a dead lab assistant, you can see some ammunition.", //There's some ammunition on the ground.
+        options: [
+          { text: "Go north.", dest: 12 },
+          { text: "Get ammo.", dest: 11.1 },
+          { text: "Go south.", dest: 10 }
+        ]
+      },
+      11.1: {
+        text: "Ammo taken.", //Ammo
+        options: [
+          { text: "Go north.", dest: 12 },
+          { text: "Go south.", dest: 10 }
+        ]
+      },
+      12: {
+        text: "The hall continues north.",
+        options: [
+          { text: "Go north.", dest: 13 },
+          { text: "Go south.", dest: 11 }
+        ]
+      },
+      13: {
+        text: "You're at the north end of the long hallway. There is a stairwell to the east.",
+        options: [
+          { text: "Go west.", dest: 14 },
+          { text: "Go south.", dest: 12 }
+        ]
+      },
+      14: {
+        text: "The stairwell. A smear of blood appears down the full flight of stairs.",
+        options: [
+          { text: "Go downstairs.", dest: 20 },
+          { text: "Go east.", dest: 13 }
+        ]
+      },
+    }
   }
 
-  var currentRoom = 0,
+  var currentRoom = 8,
       currentOptions = function() {
         return db['rooms'][currentRoom]['options']
       }

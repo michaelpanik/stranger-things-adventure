@@ -109,10 +109,93 @@ var Model = (function() {
         ]
       },
       14: {
-        text: "The stairwell. A smear of blood appears down the full flight of stairs.",
+        text: "The stairwell, upstairs. A smear of blood appears down the full flight of stairs. There's a closet to your right.",
         options: [
           { text: "Go downstairs.", dest: 20 },
+          { text: "Enter closet.", dest: 20 },
           { text: "Go east.", dest: 13 }
+        ]
+      },
+      15: {
+        text: "A supply closet. A lone medicine bottle on the shelf reads \"Jane\", and the rest is blacked out.",
+        options: [
+          { text: "Exit closet.", dest: 14 }
+        ]
+      },
+      20: { //DOWNSTAIRS
+        text: "The stairwell, downstairs. The air is pungent. It appears there is no radio signal here.",
+        options: [
+          { text: "Go north.", dest: 19 }
+        ]
+      },
+      19: {
+        text: "The hall continues east and west.",
+        options: [
+          { text: "Go east.", dest: 18 },
+          { text: "Go west.", dest: 21 }
+        ]
+      },
+      18: {
+        text: "Operating Wing. The sign on the wall reads \"Area Restricted\"",
+        options: [
+          { text: "Go north.", dest: 17 },
+        ]
+      },
+      17: {
+        text: "The hall turns to the east. Something's not right.",
+        options: [
+          { text: "Go north.", dest: 16 },
+        ]
+      },
+      16: {
+        text: "The hall continues north. Your radio crackles, and then...nothing.",
+        options: [
+          { text: "Go north.", dest: 29 },
+        ]
+      },
+      29: {
+        text: "A scientist lays dead on the ground. He's holding a piece of paper.",
+        options: [
+          { text: "Go north.", dest: 30 },
+          { text: "Take paper.", dest: 29.1 },
+        ]
+      },
+      29.1: {
+        text: "It appears to be a lab report full of jargon.",
+        options: [
+          { text: "Discard the paper.", dest: 29 }
+        ]
+      },
+      30: {
+        text: "The hall turns to the west.",
+        options: [
+          { text: "Go west.", dest: 32 }
+        ]
+      },
+      32: {
+        text: "A Demadog jumps from around the corner, snarling!",
+        options: [
+          { text: "Go west.", dest: 35 },
+          { text: "Go west.", dest: 33 }
+        ]
+      },
+      33: {
+        text: "The Operating Room. Amidst the bloody instruments and bodies left by the demadog, there is a lone notepad.",
+        options: [
+          { text: "Examine the notepad.", dest: 33.1 }
+          { text: "Exit south.", dest: 33 }
+        ]
+      },
+      33.1: {
+        text: "It's largely empty. The remains of one page reads, \"...Power code (1/3): COG. Crypt...",
+        options: [
+          { text: "Store the paper.", dest: 33 }
+        ]
+      },
+      35: {
+        text: "It's largely empty. The remains of one page reads, \"...Power code (1/3): COG. Crypt...",
+        options: [
+          { text: "Store the paper.", dest: 33 }
         ]
       },
     }
